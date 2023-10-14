@@ -7,14 +7,14 @@ import {Ownable} from "openzeppelin-contracts/contracts/access/Ownable.sol";
 import {EIP712} from "openzeppelin-contracts/contracts/utils/cryptography/EIP712.sol";
 import {SignatureChecker} from "openzeppelin-contracts/contracts/utils/cryptography/SignatureChecker.sol";
 
-interface IBasePaintBrush is IERC721 {
+interface IBitArtBrush is IERC721 {
     function strengths(uint256 tokenId) external view returns (uint256);
 }
 
-contract Brush is
-    ERC721("BasePaint Brush", "BPB"),
-    EIP712("BasePaint Brush", "1"),
-    IBasePaintBrush,
+contract BitArtBrush is
+    ERC721("BitArt Brush", "BAB"),
+    EIP712("BitArt Brush", "1"),
+    IBitArtBrush,
     Ownable
 {
     uint256 public totalSupply;
